@@ -1,0 +1,6 @@
+[submodule "AhkModules/AhkUtil"]
+	path = AhkModules/AhkUtil
+	url = https://github.com/tuckn/AhkUtil.git
+[submodule "AhkModules/AhkWindowUtil"]
+	path = AhkModules/AhkWindowUtil
+	url = https://github.com/tuckn/AhkWindowUtil.git

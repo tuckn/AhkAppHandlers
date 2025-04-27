@@ -1,12 +1,11 @@
 ﻿/**
- * @Updated 2019/07/28
  * @Fileoverview Blender with AutoHotkey
  * @Fileencoding UTF-8[dos]
  * @Requirements AutoHotkey (v1.0.46+ or v2.0-a+)
  * @Installation
  *   Use #Include %A_ScriptDir%\AhkBlender\Hotkey.ahk or copy into your code
  * @License MIT
- * @Links https://github.com/tuckn/AhkBlender
+ * @Links https://github.com/tuckn/AhkAppHandlers
  * @Author Tuckn
  * @Email tuckn333@gmail.com
  * @Note Spy info of Blender
@@ -21,11 +20,11 @@
  */
 
 /**
- * @Class Blender
+ * @Class T_Blender
  * @Description The Desktop object contains methods for parsing
  * @Methods
  */
-class Blender
+class T_Blender
 {
   Static exeName := "blender.exe"
   Static winClass := "GHOST_WindowClass"

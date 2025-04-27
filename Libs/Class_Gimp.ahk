@@ -47,7 +47,7 @@
  *   ControlHWND=
  */
 
-class Gimp
+class T_Gimp
 {
   static ExeName := "gimp-2.10.exe"
   static ClassName := "gdkWindowToplevel"
@@ -55,18 +55,18 @@ class Gimp
   static TitleMergeLayers := "^(Merge Layers|レイヤーの統合)"
   static TitleScaleImage := "^(Scale Image|画像の拡大・縮小)"
 
-  class GetPID extends Gimp.Functor
+  class GetPID extends T_Gimp.Functor
   {
     Call(self)
     {
       ; Checks whether the specified process is present.
-      Process, Exist,% Gimp.ExeName
+      Process, Exist,% T_Gimp.ExeName
       ; Sets ErrorLevel to the Process ID (PID) if a matching process exists
       Return ErrorLevel
     }
   }
 
-  class Activate extends Gimp.Functor
+  class Activate extends T_Gimp.Functor
   {
     Call(self)
     {
@@ -81,17 +81,17 @@ class Gimp
    * @Param {Associative Array} [win=""] If win is empty, active window
    * @Return {Boolean}
    */
-  class IsGimpWindow extends Gimp.Functor
+  class IsGimpWindow extends T_Gimp.Functor
   {
     Call(self, ByRef win="")
     {
       rtnBool := False
 
-      if(win = "" || IsObject(win) == False) {
+      if (win = "" || IsObject(win) == False) {
         win := Desktop.GetActiveWindowInfo() ; Get the active window info.
       }
 
-      if(win.processName = Gimp.ExeName) {
+      if (win.processName = Gimp.ExeName) {
         rtnBool := True
       }
 
@@ -99,7 +99,7 @@ class Gimp
     }
   }
 
-  class SendKeysToDelete extends Gimp.Functor
+  class SendKeysToDelete extends T_Gimp.Functor
   {
     Call(self)
     {
@@ -108,7 +108,7 @@ class Gimp
     }
   }
 
-  class SendKeysToExportAs extends Gimp.Functor
+  class SendKeysToExportAs extends T_Gimp.Functor
   {
     Call(self)
     {
@@ -118,7 +118,7 @@ class Gimp
   }
 
   ; W.I.P
-  class SendKeysToExportAutomatically extends Gimp.Functor
+  class SendKeysToExportAutomatically extends T_Gimp.Functor
   {
     Call(self)
     {
@@ -136,7 +136,7 @@ class Gimp
         ; Wait for the dialog
         tmm := A_TitleMatchMode
         SetTitleMatchMode, RegEx
-        WinWait,% Gimp.TitleMergeLayers, , 3
+        WinWait,% T_Gimp.TitleMergeLayers, , 3
         SetTitleMatchMode, %tmm%
         If ErrorLevel = 0
         {
@@ -147,7 +147,7 @@ class Gimp
           ; Wait for the dialog
           tmm := A_TitleMatchMode
           SetTitleMatchMode, RegEx
-          WinWait,% Gimp.TitleExportImage, , 3
+          WinWait,% T_Gimp.TitleExportImage, , 3
           SetTitleMatchMode, %tmm%
           If ErrorLevel = 0
           {
@@ -186,7 +186,7 @@ class Gimp
     }
   }
 
-  class SendKeysToDisplayDocHistory extends Gimp.Functor
+  class SendKeysToDisplayDocHistory extends T_Gimp.Functor
   {
     Call(self)
     {
@@ -199,7 +199,7 @@ class Gimp
     }
   }
 
-  class SendKeysToSwitchGridDisplay extends Gimp.Functor
+  class SendKeysToSwitchGridDisplay extends T_Gimp.Functor
   {
     Call(self)
     {
@@ -209,7 +209,7 @@ class Gimp
     }
   }
 
-  class SendKeysToFlipHorizontally extends Gimp.Functor
+  class SendKeysToFlipHorizontally extends T_Gimp.Functor
   {
     Call(self)
     {
@@ -221,7 +221,7 @@ class Gimp
     }
   }
 
-  class SendKeysToFlipVertically extends Gimp.Functor
+  class SendKeysToFlipVertically extends T_Gimp.Functor
   {
     Call(self)
     {
@@ -233,7 +233,7 @@ class Gimp
     }
   }
 
-  class SendKeysToResizeAtPercentage extends Gimp.Functor
+  class SendKeysToResizeAtPercentage extends T_Gimp.Functor
   {
     Call(self, percent:=50)
     {
@@ -243,7 +243,7 @@ class Gimp
 
       tmm := A_TitleMatchMode
       SetTitleMatchMode, RegEx
-      WinWait,% Gimp.TitleScaleImage, , 3
+      WinWait,% T_Gimp.TitleScaleImage, , 3
       SetTitleMatchMode, %tmm%
       if (ErrorLevel = 0) {
         Send, !e ; Height
@@ -260,7 +260,7 @@ class Gimp
     }
   }
 
-  class SendKeysToRotateLayer extends Gimp.Functor
+  class SendKeysToRotateLayer extends T_Gimp.Functor
   {
     Call(self)
     {
@@ -271,7 +271,7 @@ class Gimp
     }
   }
 
-  class SendKeysToRotateTo180 extends Gimp.Functor
+  class SendKeysToRotateTo180 extends T_Gimp.Functor
   {
     Call(self)
     {
@@ -283,7 +283,7 @@ class Gimp
     }
   }
 
-  class SendKeysToRotateToLeft extends Gimp.Functor
+  class SendKeysToRotateToLeft extends T_Gimp.Functor
   {
     Call(self)
     {
@@ -295,7 +295,7 @@ class Gimp
     }
   }
 
-  class SendKeysToRotateToRight extends Gimp.Functor
+  class SendKeysToRotateToRight extends T_Gimp.Functor
   {
     Call(self)
     {

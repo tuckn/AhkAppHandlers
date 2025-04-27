@@ -21,11 +21,11 @@ IsAudacity(ByRef win="")
 {
   rtnBool := False
 
-  if(win = "" || IsObject(win) == False) {
+  if (win = "" || IsObject(win) == False) {
     win := Desktop.GetActiveWindowInfo() ; Get the active window info.
   }
 
-  if(win.processName = "audacity.exe") {
+  if (win.processName = "audacity.exe") {
     rtnBool := True
   }
 
@@ -35,22 +35,22 @@ IsAudacity(ByRef win="")
 /**
  * @Function IsAviutl
  * @Description return 1:True/0:False if the window is Aviutl. {{{
-     WinTitle: TucknFunctions.ahk (C:\tkn\lib) - GVIM
-     WinTitle: 1280x720_30000-1001fps_48000Hz.exedit (1280,720)  [325/2987]* [00:00:10.81]  #temp0
-     ProcessName(ahk_exe): aviutl.exe
-     WinHandle(ahk_id): 0x2d18fe
-     ClassName(ahk_class): AviUtl
-     ControlName:
-     ControlHWND:
-     ControlText:
+    WinTitle: TucknFunctions.ahk (C:\tkn\lib) - GVIM
+    WinTitle: 1280x720_30000-1001fps_48000Hz.exedit (1280,720)  [325/2987]* [00:00:10.81]  #temp0
+    ProcessName(ahk_exe): aviutl.exe
+    WinHandle(ahk_id): 0x2d18fe
+    ClassName(ahk_class): AviUtl
+    ControlName:
+    ControlHWND:
+    ControlText:
 
-     WinTitle: 拡張編集 [00:00:10.81] [325/2987]
-     ProcessName(ahk_exe): aviutl.exe
-     WinHandle(ahk_id): 0xe16fa
-     ClassName(ahk_class): AviUtl
-     ControlName:
-     ControlHWND:
-     ControlText:
+    WinTitle: 拡張編集 [00:00:10.81] [325/2987]
+    ProcessName(ahk_exe): aviutl.exe
+    WinHandle(ahk_id): 0xe16fa
+    ClassName(ahk_class): AviUtl
+    ControlName:
+    ControlHWND:
+    ControlText:
  * @Param {Associative Array} [win=""] If win is empty, active window
  * @Return {Boolean}
  */
@@ -58,11 +58,11 @@ IsAviutl(ByRef win="")
 {
   rtnBool := False
 
-  if(win = "" || IsObject(win) == False) {
+  if (win = "" || IsObject(win) == False) {
     win := Desktop.GetActiveWindowInfo() ; Get the active window info.
   }
 
-  if(win.processName = "aviutl.exe") {
+  if (win.processName = "aviutl.exe") {
     rtnBool := True
   }
 
@@ -79,11 +79,11 @@ IsJane2ch(ByRef win="")
 {
   rtnBool := False
 
-  if(win = "" || IsObject(win) == False) {
+  if (win = "" || IsObject(win) == False) {
     win := Desktop.GetActiveWindowInfo() ; Get the active window info.
   }
 
-  if(win.processName = "Jane2ch.exe") {
+  if (win.processName = "Jane2ch.exe") {
     rtnBool := True
   }
 
@@ -94,12 +94,12 @@ IsJane2ch(ByRef win="")
  * @Function IsIrfanview
  * @Description return 1:True/0:False if the window is IrfanView. {{{
     WinTitle: 20170416T053320+0900.png - IrfanView
-     ProcessName(ahk_exe): i_view64.exe
-     WinHandle(ahk_id): 0x3921450
-     ClassName(ahk_class): IrfanView
-     ControlName: IrfanViewerClass1
-     ControlHWND: 0x6d12f6
-     ControlText:
+    ProcessName(ahk_exe): i_view64.exe
+    WinHandle(ahk_id): 0x3921450
+    ClassName(ahk_class): IrfanView
+    ControlName: IrfanViewerClass1
+    ControlHWND: 0x6d12f6
+    ControlText:
  * @Param {Associative Array} [win=""] If win is empty, get a active win-info.
  * @Return {Boolean}
  */
@@ -107,11 +107,11 @@ IsIrfanview(ByRef win="")
 {
   rtnBool := False
 
-  if(win = "" || IsObject(win) == False) {
+  if (win = "" || IsObject(win) == False) {
     win := Desktop.GetActiveWindowInfo() ; Get the active window info.
   }
 
-  if(win.winClass = "IrfanView") {
+  if (win.winClass = "IrfanView") {
     rtnBool := True
   }
 
@@ -135,11 +135,11 @@ IsMPCbe(ByRef win="")
 {
   rtnBool := False
 
-  if(win = "" || IsObject(win) == False) {
+  if (win = "" || IsObject(win) == False) {
     win := Desktop.GetActiveWindowInfo() ; Get the active window info.
   }
 
-  if(win.processName = "mpc-be64.exe" || win.processName = "mpc-be.exe") {
+  if (win.processName = "mpc-be64.exe" || win.processName = "mpc-be.exe") {
     rtnBool := True
   }
 
@@ -149,25 +149,27 @@ IsMPCbe(ByRef win="")
 /**
  * @Function IsVim
  * @Description return 1:True/0:False if the window is Vim. {{{
-     WinTitle: TucknFunctions.ahk + (C:\tkn\lib) - GVIM
-     ProcessName(ahk_exe): gvim.exe
-     WinHandle(ahk_id): 0x590b7c
-     ClassName(ahk_class): Vim
-     ControlName: VimTextArea1
-     ControlHWND: 0xdf0ba4
-     ControlText: Vim text area
+    WinTitle: TucknFunctions.ahk + (C:\tkn\lib) - GVIM
+    ProcessName(ahk_exe): gvim.exe
+    WinHandle(ahk_id): 0x590b7c
+    ClassName(ahk_class): Vim
+    ControlName: VimTextArea1
+    ControlHWND: 0xdf0ba4
+    ControlText: Vim text area
  * @Param {Associative Array} [win=""] If win is empty, active window
  * @Return {Boolean}
  */
+Global T_ExeNameGVim := "gvim.exe"
+Global T_ExeNameGVimRun := "vimrun.exe"
 IsVim(ByRef win="")
 {
   rtnBool := False
 
-  if(win = "" || IsObject(win) == False) {
+  if (win = "" || IsObject(win) == False) {
     win := Desktop.GetActiveWindowInfo() ; Get the active window info.
   }
 
-  if(win.processName = "gvim.exe") {
+  if (win.processName = "gvim.exe") {
     rtnBool := True
   }
 

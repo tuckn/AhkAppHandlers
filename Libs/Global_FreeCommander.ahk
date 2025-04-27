@@ -19,13 +19,13 @@
  */
 
 Global G_FreeCommanderFullPath := T_Words.path.exeFreeCommander
-Global G_FreeCommanderName := ""
-SplitPath, G_FreeCommanderFullPath, G_FreeCommanderName
+Global T_FreeCommanderName := ""
+SplitPath, G_FreeCommanderFullPath, T_FreeCommanderName
 
 GetFreeCommanderPID() ; {{{
 {
   ; Checks whether the specified process is present.
-  Process, Exist, G_FreeCommanderName
+  Process, Exist, T_FreeCommanderName
   ; Sets ErrorLevel to the Process ID (PID) if a matching process exists
   Return ErrorLevel
 } ; }}}

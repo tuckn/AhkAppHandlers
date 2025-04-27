@@ -9,14 +9,14 @@
 ; Internal
 #Include %A_ScriptDir%\Libs\Global_Test.ahk
 
-#Include %A_ScriptDir%\Libs\Global_Identifiers.ahk
-#Include %A_ScriptDir%\Libs\Global_Blender.ahk
+#Include %A_ScriptDir%\Libs\Class_Blender.ahk
+#Include %A_ScriptDir%\Libs\Class_Gimp.ahk
+#Include %A_ScriptDir%\Libs\Class_VisualStudio.ahk
+#Include %A_ScriptDir%\Libs\Class_VisualStudioCode.ahk
 #Include %A_ScriptDir%\Libs\Global_ConsoleApp.ahk
-#Include %A_ScriptDir%\Libs\Global_Explorer.ahk
 #Include %A_ScriptDir%\Libs\Global_Excel.ahk
-#Include %A_ScriptDir%\Libs\Global_Gimp.ahk
-#Include %A_ScriptDir%\Libs\Global_VisualBasicApp.ahk
+#Include %A_ScriptDir%\Libs\Global_Explorer.ahk
 #Include %A_ScriptDir%\Libs\Global_FreeCommander.ahk
+#Include %A_ScriptDir%\Libs\Global_Identifiers.ahk
 #Include %A_ScriptDir%\Libs\Global_KeePass.ahk
-#Include %A_ScriptDir%\Libs\Global_VisualStudio.ahk
-#Include %A_ScriptDir%\Libs\Global_VisualStudioCode.ahk
+#Include %A_ScriptDir%\Libs\Global_VisualBasicApp.ahk

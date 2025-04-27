@@ -325,7 +325,7 @@ XL_RotateShapesToRight() ; {{{
 XL_SaveActiveWorkbookAs(winHwnd="") ; {{{
 {
   XL_ActivateExcelWindow(winHwnd)
-  Send, {F12}
+  Send, {F12} ; Save As
   Return
 } ; }}}
 

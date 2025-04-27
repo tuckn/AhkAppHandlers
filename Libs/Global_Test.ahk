@@ -1,0 +1,12 @@
+﻿; @TODO
+MsgBox,% MB_IconInfo, Hot Keys,% "[Ctrl] + [Shift] + 5: Get the active window info`n"
+  . "[Ctrl] + [Shift] + 6: Get the window info under the cursor`n"
+  . "[Ctrl] + [Shift] + 7: Double click the coordinates of the caret`n"
+  . "[Ctrl] + [Shift] + 8: Wait for notepad.exe of process name appeared`n"
+  . "[Ctrl] + [Shift] + 9: Wait for ' PowerShell' of window title appeared`n"
+  . "[Ctrl] + [Shift] + 0: Tooltip and TrayTip (Not worked?)`n"
+  . "[F10] + LClicking and move the cusor: Move the window`n"
+  . "[F10] + RClicking and move the cusor: Risize the window from bottom-right`n"
+  . "[F10] + [Shift] + RClicking and move the cusor: Risize the window from top-left`n"
+  . "`n"
+  . "Exit to manage the trask tray"

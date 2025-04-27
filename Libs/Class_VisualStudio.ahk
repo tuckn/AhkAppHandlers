@@ -21,23 +21,23 @@
       ControlHwnds: [0x31c3c]
  */
 
-class VisualStudio
+class T_VisualStudio
 {
   static ExeName := "devenv.exe"
   ; static ClassName := ""
 
-  class GetPID extends VisualStudio.Functor
+  class GetPID extends T_VisualStudio.Functor
   {
     Call(self)
     {
       ; Checks whether the specified process is present.
-      Process, Exist,% VisualStudio.ExeName
+      Process, Exist,% T_VisualStudio.ExeName
       ; Sets ErrorLevel to the Process ID (PID) if a matching process exists
       Return ErrorLevel
     }
   }
 
-  class Activate extends VisualStudio.Functor
+  class Activate extends T_VisualStudio.Functor
   {
     Call(self)
     {
@@ -52,17 +52,17 @@ class VisualStudio
    * @Param {Associative Array} [win=""] If win is empty, active window
    * @Return {Boolean}
    */
-  class IsVisualStudio extends VisualStudio.Functor
+  class IsVisualStudio extends T_VisualStudio.Functor
   {
     Call(self, ByRef win="")
     {
       rtnBool := False
 
-      if(win = "" || IsObject(win) == False) {
+      if (win = "" || IsObject(win) == False) {
         win := Desktop.GetActiveWindowInfo() ; Get the active window info.
       }
 
-      if(win.processName = VisualStudio.ExeName) {
+      if (win.processName = T_VisualStudio.ExeName) {
         rtnBool := True
       }
 
@@ -70,7 +70,7 @@ class VisualStudio
     }
   }
 
-  class SendHotkeyForwardLocation extends VisualStudio.Functor
+  class SendHotkeyForwardLocation extends T_VisualStudio.Functor
   {
     Call(self)
     {
@@ -79,7 +79,7 @@ class VisualStudio
     }
   }
 
-  class SendHotkeyPreviousLocation extends VisualStudio.Functor
+  class SendHotkeyPreviousLocation extends T_VisualStudio.Functor
   {
     Call(self)
     {
@@ -88,7 +88,7 @@ class VisualStudio
     }
   }
 
-  class SendHotkeyNextTab extends VisualStudio.Functor
+  class SendHotkeyNextTab extends T_VisualStudio.Functor
   {
     Call(self)
     {
@@ -98,7 +98,7 @@ class VisualStudio
     }
   }
 
-  class SendHotkeyPreviousTab extends VisualStudio.Functor
+  class SendHotkeyPreviousTab extends T_VisualStudio.Functor
   {
     Call(self)
     {
@@ -108,7 +108,7 @@ class VisualStudio
     }
   }
 
-  class SendHotkeyGoToDefinition extends VisualStudio.Functor
+  class SendHotkeyGoToDefinition extends T_VisualStudio.Functor
   {
     Call(self)
     {
@@ -116,7 +116,7 @@ class VisualStudio
     }
   }
 
-  class SendHotkeyCloseDocWin extends VisualStudio.Functor
+  class SendHotkeyCloseDocWin extends T_VisualStudio.Functor
   {
     Call(self)
     {
@@ -130,7 +130,7 @@ class VisualStudio
    * @Method WaitAndSendHotkey
    * @Description
    */
-  class WaitAndSendHotkey extends VisualStudio.Functor
+  class WaitAndSendHotkey extends T_VisualStudio.Functor
   {
     Call(self)
     {
